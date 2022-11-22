@@ -1,4 +1,3 @@
-
 import random
 import string
 alphabet = 26
