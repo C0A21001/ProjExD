@@ -6,14 +6,10 @@ def button_click(event):
         entry.delete(0,tk.END)
     btn = event.widget
     txt = btn["text"]
-    if txt == "+":
-        entry.insert(tk.END,"+")
-    elif txt == "=":
+    if txt == "=":
         ans = eval(entry.get())
         entry.delete(0,tk.END)
         entry.insert(tk.END,ans)
-    elif txt == "-":
-        entry.insert(tk.END,"-")
     elif txt == "×":
         entry.insert(tk.END,"*")
     elif txt == "÷":
