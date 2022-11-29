@@ -9,7 +9,10 @@ def button_click(event):
 root = tk.Tk()
 root.title("")
 root.geometry("300x500")
-r = 0
+entry = tk.Entry(justify="right",width = 10,font=("",40))
+entry.insert(tk.END,"")
+entry.grid(columnspan = 4)
+r = 1
 c = 0
 for i in range(9,-1,-1):
     button = tk.Button(root,text=f'{i}',font=("",30),width=4,height=2)
