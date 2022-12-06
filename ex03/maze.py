@@ -46,7 +46,7 @@ if __name__ == "__main__":
     canvas = tk.Canvas(width = "1500",height = "900",bg = "black")
     canvas.pack()
     maze_lst = mm.make_maze(15,9)
-    mm.show_maze(canvas,maze_lst)
+    mm.show_ｓmaze(canvas,maze_lst)
     key = " "
     mx,my = 1,1
     cx,cy = mx*100+50,my*100+50
