@@ -39,7 +39,6 @@ def main_proc():
         canvas.coords("tori",cx,cy)
     root.after(100, main_proc)
 
-
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("迷えるこうかとん")
@@ -54,6 +53,5 @@ if __name__ == "__main__":
     canvas.create_image(cx,cy,image = image,tag = "tori")
     root.bind("<KeyPress>",key_down)
     root.bind("<KeyRelease>",key_up)
-
     main_proc()
     root.mainloop()
