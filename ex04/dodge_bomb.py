@@ -64,7 +64,7 @@ def main():
             tori_rct.centerx -= 1
         if key_dct[pg.K_RIGHT]:
             tori_rct.centerx += 1
-        if key_dct[pg.K_BACKSPACE]:
+        if key_dct[pg.K_BACKSPACE]: #backspaceで終了
             return
         if check_bound(tori_rct, scrn_rct) != (+1,+1):
             #どこかしらはみ出ていたら
