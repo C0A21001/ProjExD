@@ -83,11 +83,11 @@ def main():
         vx *= yoko
         vy *= tate
         scrn_sfc.blit(bomb_sfc,bomb_rct)
-        if time > 20 and (-４ < vx < 4) and (-4 < vy < 4):
+        if time > 20 and (-4 < vx < 4) and (-4 < vy < 4):
             vx *= 1.01
             vy *= 1.01
         if tori_rct.colliderect(bomb_rct):
-            pass
+            return
         pg.display.update()
         clock.tick(1000)
 
