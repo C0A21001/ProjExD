@@ -2,6 +2,8 @@ import pygame as pg
 import sys
 import random
 import time
+
+
 class Screen:
     def __init__(self,title,wh,image_path):
         pg.display.set_caption(title)
@@ -14,7 +16,8 @@ class Screen:
         self.sfc.blit(self.bgi_sfc,self.bgi_rct)
 
 
-class Bird:#w,s,a,dで移動
+#w,s,a,dで移動
+class Bird:
     key_delta = {
         pg.K_w:   [0,-1],
         pg.K_s: [0,+1],
@@ -42,6 +45,7 @@ class Bird:#w,s,a,dで移動
                 self.tori_rct.centery -= delta[1]
         self.blit(scr)
 
+
 #敵キャラを表示
 class Enemy:
     def __init__(self,image,size,xy):
@@ -52,7 +56,6 @@ class Enemy:
 
     def blit(self,scr:Screen):
         scr.sfc.blit(self.enmy_sfc,self.enmy_rct)
-
 
 
 class Bomb:
@@ -75,7 +78,6 @@ class Bomb:
         self.vy *= tate
         self.blit(scr)
        
-    
 def check_bound(obj_rct,scr_rct):
     #第1引数は、こうかとんrectまたは爆弾rect
     #第２因数は、スクリーンの
@@ -105,8 +107,6 @@ def main():
             vy = random.choice([-1,+1])
             r  = random.randint(10,50)
             bombs.append(Bomb((255,0,0),r,(vx,vy),scr)) 
-    
-
     #時間を計測するbための変数
     time = 0 
     #HPを表す変数
@@ -120,7 +120,6 @@ def main():
         time += 0.01
         if time == 10:
             life += 100
-
         #HPを表示する
         txt1 = fonto.render("HP:"+str(int(life)),True, (0,0,0))
         scr.sfc.blit(txt1, (100,30))
@@ -141,7 +140,7 @@ def main():
                 #HPが0になったら終了(0の表示が見えるようにするため-1未満とする)
                 if life < -1:
                     return
-                    
+          
         pg.display.update()
         clock.tick(1000)
 
